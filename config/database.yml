@@ -3,13 +3,26 @@ default: &default
   encoding: utf8
   pool: 5
   port: 3306
+
 development:
   <<: *default
   host: db
   username: root
   password:
-  socket: /var/lib/mysql/mysql.sock
-  database: hiroki_database_create 
-#test:
-#  <<: *default
-#  database: rails_sample_development
+  database: development_db
+
+test:
+  <<: *default
+  host: db 
+  username: root
+  password:
+  database: test_db
+
+production:
+  <<: *default
+  database: <%= Rails.application.credentials.db[:name] %>
+  username: <%= Rails.application.credentials.db[:user] %>
+  password: <%= Rails.application.credentials.db[:password] %>
+  host: <%= Rails.application.credentials.db[:host] %>
+
+

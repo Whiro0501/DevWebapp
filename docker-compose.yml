@@ -4,10 +4,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.dev
-#    env_file: .docker-env
     environment:
-#      DATABASE_URL: 'mysql2://db'
-      RAILS_ENV: 'development'
+      RAILS_ENV: development      
+      DATABASE_URL: 'mysql2://db'
     restart: always
     volumes:
       - .:/app:cached
@@ -20,7 +19,7 @@ services:
     entrypoint: bash -c
     command: "rm -f tmp/pids/server.pid"
     command: |
-      "bundle install && bundle exec rails s -b 0.0.0.0 -p 3000"
+      "bundle install && bundle exec rails s -b 0.0.0.0 -p 3000 -e development"
   db:
     image: mysql:5.7
     restart: always
