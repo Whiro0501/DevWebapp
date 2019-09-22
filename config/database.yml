@@ -13,7 +13,7 @@ development:
 
 test:
   <<: *default
-  host: <%= ENV.fetch('DB_HOST') { ‘db’ } %>
+  host: <%= ENV.fetch('DB_HOST') { 'db' } %>
   username: root
   password:
   database: test_db
