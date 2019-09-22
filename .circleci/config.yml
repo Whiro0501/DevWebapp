@@ -6,6 +6,7 @@ jobs:
         environment:
           RAILS_ENV: test
           DB_USERNAME: root
+          DB_HOST: 127.0.0.1
           BUNDLER_VERSION: 2.0.1
       - image: mysql:5.7
         environment:
