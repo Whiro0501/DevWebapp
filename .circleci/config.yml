@@ -89,7 +89,10 @@ jobs:
             aws ecs describe-task-definition --task-definition rails-service | jq '.taskDefinition | { containerDefinitions: .containerDefinitions }' > definition.json
             aws ecs register-task-definition --family rails-service --cli-input-json file://definition.json
             aws ecs update-service --cluster sample-ecs-cluster --service rails-service --task-definition rails-service
-
+      - run:
+          name: migration
+          command: |
+            aws ecs run-task --cluster sample-ecs-cluster --task-definition rails-migrate
 
 workflows:
   version: 2
