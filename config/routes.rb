@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 #  root 'boards#index'
 #  root to: 'top#index'
 #  resources :todos
-  resources :boards, only: [:index, :new, :create, :show, :edit, :update]
+  resources :boards
   resources :todos
   resources :health_check, only: [:index]
 end
