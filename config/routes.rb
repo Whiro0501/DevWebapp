@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 #  resources :todos
   get 'boards', to: 'boards#index'
   get 'boards/new', to: 'boards#new'
+  post 'boards', to: 'boards#create'
   resources :todos
   resources :health_check, only: [:index]
 end
