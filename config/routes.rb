@@ -3,9 +3,7 @@ Rails.application.routes.draw do
 #  root 'boards#index'
 #  root to: 'top#index'
 #  resources :todos
-  get 'boards', to: 'boards#index'
-  get 'boards/new', to: 'boards#new'
-  post 'boards', to: 'boards#create'
+  resources :boards
   resources :todos
   resources :health_check, only: [:index]
 end
