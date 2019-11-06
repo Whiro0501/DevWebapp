@@ -1,12 +1,19 @@
 if defined?(AssetSync)
   AssetSync.configure do |config|
-    config.fog_provider = 'AWS'
-    config.fog_region = 'ap-northeast-1'
-    config.fog_directory = 'asset-rails-sample'
-    config.aws_access_key_id = Rails.application.credentials.aws[:s3_access_key_id]
-    config.aws_secret_access_key = Rails.application.credentials.aws[:s3_secret_access_key]
-    config.existing_remote_files = 'keep'
-    config.gzip_compression = true
+#    config.fog_provider = 'AWS'
+#    config.fog_region = 'ap-northeast-1'
+#    config.aws_access_key_id = Rails.application.credentials.aws[:s3_access_key_id]
+#    config.aws_secret_access_key = Rails.application.credentials.aws[:s3_secret_access_key]
+#    config.existing_remote_files = 'keep'
+#    config.gzip_compression = true
+
+#config.fog_directory =  'asset-rails-sample'
+
+#config.aws_access_key_id = AKIAXKLSCJFHHL4QOOAM
+#config.aws_secret_access_key = mnQIKeOjt0qQRvBdLxHm4SVouMUEvjbkmwcjwYMg
+
+#config.enabled = false if Rails.env.development?
+
     # To use AWS reduced redundancy storage.
     # config.aws_reduced_redundancy = true
     #
@@ -21,7 +28,6 @@ if defined?(AssetSync)
     #
     # Use http instead of https. Default should be "https" (at least for fog-aws)
     # config.fog_scheme = "http"
-    config.fog_directory = ENV['FOG_DIRECTORY']
 
     # Invalidate a file on a cdn after uploading files
     # config.cdn_distribution_id = "12345"
