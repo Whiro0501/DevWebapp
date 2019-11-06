@@ -2,8 +2,8 @@ if defined?(AssetSync)
   AssetSync.configure do |config|
     config.fog_provider = 'AWS'
     config.fog_region = 'ap-northeast-1'
-#    config.aws_access_key_id = Rails.application.credentials.aws[:s3_access_key_id]
-#    config.aws_secret_access_key = Rails.application.credentials.aws[:s3_secret_access_key]
+    config.aws_access_key_id = Rails.application.credentials.aws[:s3_access_key_id]
+    config.aws_secret_access_key = Rails.application.credentials.aws[:s3_secret_access_key]
 #    config.existing_remote_files = 'keep'
 #    config.gzip_compression = true
 
