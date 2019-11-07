@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :boards
   resources :todos
   resources :health_check, only: [:index]
+  resources :comments, only: %i[create destroy]
 end
