@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_07_164452) do
+ActiveRecord::Schema.define(version: 2019_11_07_173754) do
+
+  create_table "board_tag_relations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "board_id"
+    t.bigint "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["board_id"], name: "index_board_tag_relations_on_board_id"
+    t.index ["tag_id"], name: "index_board_tag_relations_on_tag_id"
+  end
 
   create_table "boards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -29,11 +38,19 @@ ActiveRecord::Schema.define(version: 2019_11_07_164452) do
     t.index ["board_id"], name: "index_comments_on_board_id"
   end
 
+  create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "todos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "board_tag_relations", "boards"
+  add_foreign_key "board_tag_relations", "tags"
   add_foreign_key "comments", "boards"
 end
