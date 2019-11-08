@@ -3,7 +3,7 @@ class BoardsController < ApplicationController
 
   def index
     @boards = params[:tag_id].present? ? Tag.find(params[:tag_id]).boards : Board.all
-    @boards = Board.page(params[:page])
+    @boards = @boards.page(params[:page])
   end
 
   def new
@@ -11,12 +11,12 @@ class BoardsController < ApplicationController
   end
 
   def create
-  board = Board.new(board_params)
-  if board.save
-    flash[:notice] = "「#{board.title}」の掲示板を作成しました"
-    redirect_to board
-  else
-    redirect_to new_board_path, flash: {
+    board = Board.new(board_params)
+    if board.save
+      flash[:notice] = "「#{board.title}」の掲示板を作成しました"
+      redirect_to board
+    else  
+      redirect_to new_board_path, flash: {
       board: board,
       error_messages: board.errors.full_messages
     }

@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 #  root 'boards#index'
 #  root to: 'top#index'
 #  resources :todos
-  root 'home#index'
+#  root 'home#index'
+  root 'boards#index'
   resources :boards
   resources :todos
   resources :health_check, only: [:index]
