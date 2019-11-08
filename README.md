@@ -38,7 +38,7 @@ URL：　https://mype.ga
 - Github
 - Vim
 - Linux
-Mac
+- Mac
 
 # 開発環境
 エディターにはVimを使用し、
