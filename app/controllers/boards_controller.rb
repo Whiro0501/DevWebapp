@@ -2,6 +2,7 @@ class BoardsController < ApplicationController
   before_action :set_target_board, only: %i[show edit update destroy]
 
   def index
+    @boards = params[:tag_id].present? ? Tag.find(params[:tag_id]).boards : Board.all
     @boards = Board.page(params[:page])
   end
 
