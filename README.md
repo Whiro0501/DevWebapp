@@ -1,16 +1,15 @@
-# Hirogram
-自分の大好きなことを友達に共有するアプリです。
+# Mype.ga
+日頃の出来事を記録するブログアプリです。
 
 <img alt="トップ" src="https://user-images.githubusercontent.com/36604680/68087603-e4e2d380-fe9a-11e9-8c5d-7fa915fbf1c8.png" />
 
 
-URL：　https://hirogram.ga
+URL：　https://mype.ga
 
 # 使用技術
 
-- Python 3.7.3
-- Django 2.2.3
-- SQlite3
+- Ruby
+- Rails
 - bootstrap
 - jQuery
 - AWS
@@ -24,14 +23,29 @@ URL：　https://hirogram.ga
   - CloudWatch
   - IAM
   - スナップショット
+  - RDS
+  - S3
+  - Athena
+  - ECS
+  - ECR
+  - SES
+  - SNS
+  - Cloudtrail
+  
 - Github
-- Pycharm
+- Vim
 
 # 開発環境
-エディターにはPycharmを使用しアプリの開発を行いました。
+エディターにはVimを使用し、
+Docker-Composeを使用してアプリの開発を行いました。
+GithubのWorkブランチへPushするとTestが実施されます。
+WorkからMasterへMergeするとBuildやDeployが始まります。
+BuildしたDockerイメージをECRへ格納しECSにより
+オートスケールしております。
 
 # 本番環境
 本番環境はAWSへデプロイしました。
+AWSは大半をTerraformで事前に作成しました。
 
 AWSに関しては、このアプリでの開発ではシンプルな構成としました。
 
