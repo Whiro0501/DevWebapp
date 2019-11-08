@@ -37,46 +37,44 @@ URL：　https://mype.ga
   
 - Github
 - Vim
+- Linux
+Mac
 
 # 開発環境
 エディターにはVimを使用し、
 Docker-Composeを使用してアプリの開発を行いました。
 GithubのWorkブランチへPushするとTestが実施されます。
-WorkからMasterへMergeするとBuildやDeployが始まります。
-BuildしたDockerイメージをECRへ格納しECSにより
-オートスケールしております。
 
 # 本番環境
 本番環境はAWSへデプロイしました。
 AWSは大半をTerraformで事前に作成しました。
 tfstateファイルはS3に格納しています。
 
+WorkからMasterへMergeするとBuildやDeployが始まります。
+BuildしたDockerイメージをECRへ格納しECSにより
+オートスケールしております。
+
 # 機能一覧
 - 記事機能
   - タイムライン（新着順）
   - ユーザ投稿一覧（新着順）
-  - 画像アップロード
-  - 記事投稿機能
+  - 記事投稿機能(CRUD)
   - ページネーション機能
 - ユーザ機能
   - ユーザ登録・ログインログアウト機能全般
   - ユーザ 一覧表示機能
   - 簡単ログイン
-- フォロー機能
-  -相互フォロー機能
-- いいね機能
-  - 投稿記事へのいいね
-- 管理者機能
 - ダグ機能
   - タグ検索
 - 検索機能
   - title、bodyの検索
-- お問い合わせ機能
 - プロフィール情報
   - ユーザ情報変更
   - ユーザ 一覧表示機能
   - ユーザ 一覧表示機能
   - パスワード変更機能
+- 国際化
+ータイムゾーンの日本時間化
 
 # 頑張ったところ
  -AWSやCI/CD部分
@@ -105,22 +103,3 @@ tfstateファイルはS3に格納しています。
 　理由としては、Docker-Composeに盛り込まないと
 　いけないため調査時間などを考えると優先度は低いと判断した。
 　
-
-
-
-
-
-タイムゾーンを日本時間へ修正
-ページネーション
-CRUD
-国際化
-SCSS
-jQuery
-AWS(EC2, RDS, ALB, ECR, ECS, VPC, CloudWatch, IAM
-    ACM, Route53,S3, Cloudfront, セキュリティグループ, AutoScaling )
-CircleCI
-Terraform
-Linux(ubuntu)
-Mac
-Ruby
-Rails
