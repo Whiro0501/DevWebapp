@@ -9,8 +9,6 @@ if defined?(AssetSync)
 
 #config.fog_directory =  'asset-rails-sample'
 
-#config.aws_access_key_id = AKIAXKLSCJFHHL4QOOAM
-#config.aws_secret_access_key = mnQIKeOjt0qQRvBdLxHm4SVouMUEvjbkmwcjwYMg
 
 #config.enabled = false if Rails.env.development?
 
