@@ -1,4 +1,4 @@
-# Mype.ga
+# Mype（アプリケーション側は作成中のためAWSなどの構成を中心に見てください）
 日頃の出来事を記録するブログアプリです。
 
 <img alt="トップ" src="https://user-images.githubusercontent.com/36604680/68459052-a73dcc00-0247-11ea-89c5-2d992d4b3263.PNG" />
