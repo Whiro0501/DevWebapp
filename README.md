@@ -3,9 +3,10 @@
 
 <img alt="トップ" src="https://user-images.githubusercontent.com/36604680/68459052-a73dcc00-0247-11ea-89c5-2d992d4b3263.PNG" />
 
+※費用が高いため冗長化構成は、現在止めておりますため単一構成となります。
 
 URL：　https://mype.ga
-※費用が高いため冗長化構成は、現在止めておりますため単一構成となります。
+
 
 # 使用技術
 
