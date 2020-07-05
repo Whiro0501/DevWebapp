@@ -44,7 +44,7 @@ URL：　https://mype.ga
 - Mac
 
 # 開発環境
-エディターにはVimを使用し、
+エディターにはVSCodeを使用し、
 
 Docker-Composeを使用してアプリの開発を行いました。
 
